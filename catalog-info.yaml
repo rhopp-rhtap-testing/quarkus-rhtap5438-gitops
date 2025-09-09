@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: quarkus-rhtap5438-gitops
+  description: This is GitOps manifest for quarkus-rhtap5438   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=quarkus-rhtap5438
+    backstage.io/kubernetes-id: quarkus-rhtap5438 
+    backstage.io/techdocs-ref: dir:.
+    dev.azure.com/project-repo: rhopp-rhtap-testing/quarkus-rhtap5438-gitops
+    dev.azure.com/project: shared-public
+    dev.azure.com/build-definition: rhopp-rhtap-testing.quarkus-rhtap5438-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:quarkus-rhtap5438
